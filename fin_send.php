@@ -21,7 +21,7 @@ function scan_dir($dir) {
 $sort = scan_dir('./download');
 
 if(count($sort)){
-	$file_name_with_full_path = $sort[0];
+	$file_name_with_full_path = './download/'.$sort[0];
 	if (function_exists('curl_file_create')) { // php 5.5+
 	  $cFile = curl_file_create($file_name_with_full_path);
 	} else { // 
