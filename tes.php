@@ -10,3 +10,4 @@ $code = 200;
 $msg = 'Success';
 include ('config_finflow.php');
 $cons = oci_connect(DB_USER, DB_PASSWORD, DB_SERVER.'/'.DB_DATABASE) or die ('Connection Failed');
+print_r($cons);
