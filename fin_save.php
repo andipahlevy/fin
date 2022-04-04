@@ -11,6 +11,10 @@ $cons = oci_connect(DB_USER, DB_PASSWORD, DB_SERVER.'/'.DB_DATABASE) or die ('Co
 $post = file_get_contents('php://input');
 $param = json_decode($post,true);
 
+if(file_exists('fin_upload/file.csv')){
+	unlink('fin_upload/file.csv');
+} 
+
 move_uploaded_file($_FILES['file_contents']['tmp_name'],'fin_upload/file.csv');
 
 $row = 1;
