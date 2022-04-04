@@ -25,7 +25,7 @@ if (($handle = fopen("fin_upload/file.csv", "r")) !== FALSE) {
 			if($c > 0){
 				$fnl .= ',';
 			}
-            $fnl .= "'".$data[$c]."'"; 
+            $fnl .= "'".str_replace("'",'*',$data[$c])."'"; 
         }
 		$sql = "INSERT INTO PL4NTAPPS.FIN_TRACKING_TMP
 		VALUES($fnl)
